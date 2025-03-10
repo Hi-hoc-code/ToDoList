@@ -4,7 +4,7 @@ export const data = [
         title: 'Design Logo',
         content: 'Create a new logo for the main project and export it in multiple formats.',
         dates: 'Created at 10 Dec 2023',
-        done: true
+        done: false
     },
     {
         id: 2,

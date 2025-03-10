@@ -1,0 +1,25 @@
+CREATE DATABASE note_database;
+
+CREATE TABLE ACCOUNT (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE NOTE (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    time_start TIME,
+    time_end TIME,
+    status BOOLEAN DEFAULT FALSE,
+    user_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES ACCOUNT(id)
+);
+
+INSERT INTO ACCOUNT VALUES (null, 'ngocyho1612@gmail.com','123456');
+INSERT INTO ACCOUNT VALUES (null, 'test@gmail.com' ,'123456');
+INSERT INTO NOTE VALUES (null, 'Test 1', 'Content 1', '2021-01-01', '08:00:00', '09:00:00',FALSE, 1);
+INSERT INTO NOTE VALUES (null, 'Test 2', 'Content 2', '2021-01-02', '08:00:00', '09:00:00',FALSE, 2);
+INSERT INTO NOTE VALUES (null, 'Test 3', 'Content 3', '2021-01-03', '08:00:00', '09:00:00',TRUE, 1);

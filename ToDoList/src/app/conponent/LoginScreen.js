@@ -14,9 +14,11 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 const LoginScreen = ({ navigation }) => {
     const passwordInputRef = useRef(null);
-
-
-    
+    const login = () => {
+        console.log('Login')
+        
+        // navigation.navigate('Home')
+    }
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -56,7 +58,7 @@ const LoginScreen = ({ navigation }) => {
                 <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
                     <Text style={styles.btnForgot}>Forgot Password?</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btnLogin} onPress={() => navigation.navigate('Home')}>
+                <TouchableOpacity style={styles.btnLogin} onPress={() => login()}>
                     <Text style={{ textAlign: 'center', color: "#fff" }}>SIGN IN</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('Register')}>
